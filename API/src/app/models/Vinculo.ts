@@ -2,10 +2,10 @@ import { ObjectId } from 'mongodb';
 import { model, Schema } from 'mongoose';
 
 export const Vinculo = model('Vinculo', new Schema({
-  id: ObjectId,
+  id: String,
   tipoVinculo: String,
   idProdutores: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'Produtores',
   },
 }));

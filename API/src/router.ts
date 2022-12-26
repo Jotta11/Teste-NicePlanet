@@ -1,29 +1,25 @@
 import { Router } from "express";
+import { createDetails } from "./app/useCases/Details/createDetails";
+import { listDetails } from "./app/useCases/Details/listDetails";
 import { createRecords } from "./app/useCases/Records/createRecords";
+import { deleteRecords } from "./app/useCases/Records/deleteRecords";
 import { listRecords } from "./app/useCases/Records/listRecords";
 
 export const router = Router();
 
-// List Registers
+// List Records
 router.get('/records', listRecords);
 
 // Create Records
 router.post('/records', createRecords);
 
 // Create Details
-router.post('/details', (req, res) => {
-  res.send('OK');
-});
-
+router.post('/details', createDetails);
 
 // List Details
-router.get('/details', (req, res) => {
-  res.send('OK');
-});
+router.get('/details', listDetails);
 
 // Buy Register
 
 //Delete Register
-router.delete('/records', (req, res) => {
-  res.send('OK');
-}); 
+router.delete('/records', deleteRecords);

@@ -7,7 +7,7 @@ export const Details = model('Details', new Schema({
     ref: 'Monitoramento',
   },
   idPropriedade: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'Propriedades',
   },
   tipoPropriedade: {
@@ -15,7 +15,7 @@ export const Details = model('Details', new Schema({
     ref: 'Propriedades',
   },
   idProdutor: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'Produtores',
   },
   tipoVinculo: {
