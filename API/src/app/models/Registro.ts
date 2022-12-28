@@ -30,4 +30,12 @@ export const Records = model('Records', new Schema({
     type: String,
     ref: 'Monitoramento',
   },
+
+  detalhes: [{
+    analise: String,
+    idPropriedade: String,
+    tipoPropriedade: String,
+    idProdutor: String,
+    tipoVinculo: String,
+  }],
 }));

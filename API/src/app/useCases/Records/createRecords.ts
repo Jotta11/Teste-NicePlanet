@@ -5,7 +5,7 @@ import { Records } from '../../models/Registro'
 
 export async function createRecords(req: Request, res: Response) {
   try {
-    const {nomePropriedade, numeroCadastro, nomeProdutor, CPF, dataMonitoramento, analista, resultado,} = req.body;
+    const {nomePropriedade, numeroCadastro, nomeProdutor, CPF, dataMonitoramento, analista, resultado,detalhes} = req.body;
 
     const records = await Records.create({
       nomePropriedade,
@@ -15,6 +15,7 @@ export async function createRecords(req: Request, res: Response) {
       dataMonitoramento,
       analista,
       resultado,
+      detalhes,
     }); 
     res.status(201).json(records);
     

@@ -5,17 +5,13 @@ export function Records2() {
   return (
     <Container>
      <Records2Board 
-     header ="Fazenda Fortuna"
-     />
+        header="Fazenda Fortuna" record={[]}     />
      <Records2Board 
-     header ="Fazenda Fortuna"
-     />
+        header="Fazenda Fortuna" record={[]}     />
      <Records2Board 
-     header ="Fazenda Fortuna"
-     />
+        header="Fazenda Fortuna" record={[]}     />
      <Records2Board 
-     header ="Fazenda Fortuna"
-     />
+        header="Fazenda Fortuna" record={[]}     />
     </Container>
   )
 }

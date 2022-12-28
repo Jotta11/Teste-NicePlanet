@@ -1,5 +1,5 @@
-export interface record {
-  _id: String;
+export interface Record {
+  id: String;
   nomePropriedade: String;
   numeroCadastro: String;
   nomeProdutor: String;
@@ -7,4 +7,11 @@ export interface record {
   dataMonitoramento: String;
   analista: String;
   resultado: String;
+  detalhes: {
+    analise: String;
+    idPropriedade: String;
+    tipoPropriedade: String;
+    idProdutor: String;
+    tipoVinculo: String;
+  }[];
 };

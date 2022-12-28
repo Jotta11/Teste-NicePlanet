@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { record } from "../../types/Record";
+import { DetailModal } from "../DetailModal";
 import { Board, RecordsContainer } from "./style";
 
 
 const records: record[] = [
   {
-    _id: "63aa07382eaa726361951396",
+    id: "63aa07382eaa726361951396",
     nomePropriedade: "Fazenda fortuna",
     numeroCadastro: "AM862486ugvbnkiuytrf",
     nomeProdutor: "Pedro Souza",
@@ -21,13 +23,16 @@ interface RecordsBoardProps {
 }
 
 export function Records2Board(props: RecordsBoardProps) {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   function handleOpenDetail(){
-    alert('Detalhe foi aberto');
+    setIsModalVisible(true);
   }
 
 
   return (
     <Board>
+      <DetailModal visible={isModalVisible}/>
       <header>
         <strong>
           {props.header}
@@ -36,7 +41,7 @@ export function Records2Board(props: RecordsBoardProps) {
 
       <RecordsContainer>
         {records.map((record) => (
-          <button type="button" key={record._id} onClick={handleOpenDetail}>
+          <button type="button" key={record.id} onClick={handleOpenDetail}>
             <div>
               <strong>Número Propriedade:</strong>
               <span>{record.numeroCadastro}</span>

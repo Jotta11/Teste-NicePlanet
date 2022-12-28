@@ -29,7 +29,7 @@ export const RecordsContainer = styled.div`
     display:flex;
     background-color: #fff;
     border: 1px solid rgba(204,204,204,0.4);
-    height: 128px;
+    height: 142px;
     border-radius: 8px;
     flex-direction: column;
     text-align: left;

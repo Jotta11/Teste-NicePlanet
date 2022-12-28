@@ -1,39 +1,48 @@
 import { useState } from "react";
-import { record } from "../../types/Record";
-import { RecordModal } from "../RecordModal";
+import { Record } from "../../types/Record";
+import { DetailModal } from "../DetailModal";
 import { Records } from "../Records";
 import { Board, RecordsContainer } from "./styles";
 
 
-const records: record[] = [
+export const record: Record[] = [
   {
-    _id: "63aa06f42eaa726361951393",
+    id: "63aa06f42eaa726361951393",
     nomePropriedade: "Fazenda da Serra",
     numeroCadastro: "O66666666666666666666",
     nomeProdutor: "Carlos Braga",
     CPF: "882.259.670-62",
     dataMonitoramento: "2022-12-16 10:22:34",
     analista: "Celio Gomes",
-    resultado: "LIBERADO"
+    resultado: "LIBERADO",
+    detalhes: [{
+      analise: "De acordo com a análise de imagens mais atuais de satélite foi possível identificar que o perímetro do CAR encontra-se deslocado, fora dos limites visuais da fazenda. Aconselha-se que o produtor retifique o recibo do CAR afim de georreferenciar os limites propriedade corretamente.",
+      idPropriedade: "1",
+      tipoPropriedade: "",
+      idProdutor: "1",
+      tipoVinculo: "Proprietário"
+    }]
   },
 ]
 
+
 interface RecordsBoardProps {
   header: string;
-  record: record[];
+  record: Record[];
 }
 
 export function RecordsBoard(props: RecordsBoardProps) {
   const [isModalVisible, setIsModalVisible] = useState(false);
-
-  function handleOpenDetail(){
+  function handleOpenDetails(records: Record) {
     setIsModalVisible(true);
   }
 
 
+
   return (
     <Board>
-      <RecordModal visible={isModalVisible}/>
+      <DetailModal 
+        visible={isModalVisible} record={[]}       />
       <header>
         <strong>
           {props.header}
@@ -41,8 +50,8 @@ export function RecordsBoard(props: RecordsBoardProps) {
       </header>
 
       <RecordsContainer>
-        {records.map((record) => (
-          <button type="button" key={record._id}onClick={handleOpenDetail}>
+        {record.map((record) => (
+          <button type="button" key={record.id} onClick={() => handleOpenDetails(record.detalhes)}>
             <div>
               <strong>Número Propriedade:</strong>
               <span>{record.numeroCadastro}</span>
@@ -68,7 +77,7 @@ export function RecordsBoard(props: RecordsBoardProps) {
               </div>
             </div>
           </button>
-          ))}
+        ))}
       </RecordsContainer>
     </Board>
   );
