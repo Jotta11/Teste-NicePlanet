@@ -1,4 +1,4 @@
-import { record } from "../../types/Record";
+import { Record } from "../../types/Record";
 import { RecordsBoard } from "../RecordsBoard";
 import { Container } from "./styles"
 
@@ -20,7 +20,7 @@ export function Records() {
       <RecordsBoard
         header="Fazenda da Serra" record={[]}        />
       <RecordsBoard
-        header="Fazenda da Serra" record={[]}        />
+        header="Fazenda da Serra" record={[]}       />
     </Container>
   )
 };

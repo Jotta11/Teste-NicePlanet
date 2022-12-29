@@ -44,3 +44,23 @@ export const ModalBody = styled.div`
     display:flex;
   }
 `;
+
+export const Actions = styled.footer`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 25px;
+
+
+  .Comprar{
+    background: #031537;
+    border-radius: 48px;
+    border: 0;
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+`;

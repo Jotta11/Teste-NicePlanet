@@ -29,6 +29,7 @@ export const record: Record[] = [
 interface RecordsBoardProps {
   header: string;
   record: Record[];
+  onClose(): void;
 }
 
 export function RecordsBoard(props: RecordsBoardProps) {
@@ -37,12 +38,16 @@ export function RecordsBoard(props: RecordsBoardProps) {
     setIsModalVisible(true);
   }
 
-
+  function handleCloseModal(){
+    setIsModalVisible(false);
+  }
 
   return (
     <Board>
       <DetailModal 
-        visible={isModalVisible} record={[]}       />
+        visible={isModalVisible} record={[]}
+        onClose = {handleCloseModal}     
+             />
       <header>
         <strong>
           {props.header}

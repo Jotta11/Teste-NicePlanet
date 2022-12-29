@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { record } from "../../types/Record";
+import { Record } from "../../types/Record";
 import { DetailModal } from "../DetailModal";
 import { Board, RecordsContainer } from "./style";
 
 
-const records: record[] = [
+const records: Record[] = [
   {
     id: "63aa07382eaa726361951396",
     nomePropriedade: "Fazenda fortuna",
@@ -13,13 +13,21 @@ const records: record[] = [
     CPF: "951.759.830-08",
     dataMonitoramento: "2022-12-16 10:22:34",
     analista: "Elias Ribeiro",
-    resultado: "LIBERADO"
+    resultado: "LIBERADO",
+    detalhes:[{
+      analise: "De acordo com a análise de imagens mais atuais de satélite foi possível identificar que o perímetro do CAR encontra-se deslocado, fora dos limites visuais da fazenda. Aconselha-se que o produtor retifique o recibo do CAR afim de georreferenciar os limites propriedade corretamente.",
+      idPropriedade: "1",
+      tipoPropriedade: "",
+      idProdutor: "1",
+      tipoVinculo: "Proprietário"
+    }],
   },
 ]
 
 interface RecordsBoardProps {
   header: string;
-  record: record[];
+  record: Record[];
+  onClose(): void;
 }
 
 export function Records2Board(props: RecordsBoardProps) {
@@ -29,10 +37,16 @@ export function Records2Board(props: RecordsBoardProps) {
     setIsModalVisible(true);
   }
 
+  function handleCloseModal(){
+    setIsModalVisible(false);
+  }
+
 
   return (
     <Board>
-      <DetailModal visible={isModalVisible}/>
+      <DetailModal visible={isModalVisible} record={[]} onClose={function (): void {
+        throw new Error("Function not implemented.");
+      } }/>
       <header>
         <strong>
           {props.header}
