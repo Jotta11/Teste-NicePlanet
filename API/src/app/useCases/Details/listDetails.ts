@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
 
-import { Details } from '../../models/Detalhe'
+import { Records } from '../../models/Registro'
 
-
+  
 export async function listDetails(req: Request, res: Response) {
   try {
-    const details = await Details.find();
+    const detalhes = Records.find()
 
-    res.json(details);
+    res.json(detalhes);
   } catch {
     res.status(500)
   }

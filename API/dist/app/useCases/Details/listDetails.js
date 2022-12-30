@@ -10,12 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listDetails = void 0;
-const Detalhe_1 = require("../../models/Detalhe");
+const Registro_1 = require("../../models/Registro");
 function listDetails(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const details = yield Detalhe_1.Details.find();
-            res.json(details);
+            const detalhes = Registro_1.Records.find();
+            res.json(detalhes);
         }
         catch (_a) {
             res.status(500);

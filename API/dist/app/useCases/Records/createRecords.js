@@ -14,7 +14,7 @@ const Registro_1 = require("../../models/Registro");
 function createRecords(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const { nomePropriedade, numeroCadastro, nomeProdutor, CPF, dataMonitoramento, analista, resultado, } = req.body;
+            const { nomePropriedade, numeroCadastro, nomeProdutor, CPF, dataMonitoramento, analista, resultado, detalhes } = req.body;
             const records = yield Registro_1.Records.create({
                 nomePropriedade,
                 numeroCadastro,
@@ -23,6 +23,7 @@ function createRecords(req, res) {
                 dataMonitoramento,
                 analista,
                 resultado,
+                detalhes,
             });
             res.status(201).json(records);
         }

@@ -31,4 +31,11 @@ exports.Records = (0, mongoose_1.model)('Records', new mongoose_1.Schema({
         type: String,
         ref: 'Monitoramento',
     },
+    detalhes: [{
+            analise: String,
+            idPropriedade: String,
+            tipoPropriedade: String,
+            idProdutor: String,
+            tipoVinculo: String,
+        }],
 }));

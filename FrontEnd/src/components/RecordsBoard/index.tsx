@@ -33,6 +33,9 @@ interface RecordsBoardProps {
 }
 
 export function RecordsBoard(props: RecordsBoardProps) {
+
+
+  
   const [isModalVisible, setIsModalVisible] = useState(false);
   function handleOpenDetails(records: Record) {
     setIsModalVisible(true);
@@ -45,7 +48,7 @@ export function RecordsBoard(props: RecordsBoardProps) {
   return (
     <Board>
       <DetailModal 
-        visible={isModalVisible} record={[]}
+        visible={isModalVisible} records={[]}
         onClose = {handleCloseModal}     
              />
       <header>

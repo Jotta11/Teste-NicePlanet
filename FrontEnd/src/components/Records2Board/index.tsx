@@ -44,9 +44,10 @@ export function Records2Board(props: RecordsBoardProps) {
 
   return (
     <Board>
-      <DetailModal visible={isModalVisible} record={[]} onClose={function (): void {
-        throw new Error("Function not implemented.");
-      } }/>
+      <DetailModal 
+       visible={isModalVisible} records={[]}
+       onClose= {handleCloseModal}
+      />
       <header>
         <strong>
           {props.header}

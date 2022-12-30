@@ -5,13 +5,21 @@ export function Records2() {
   return (
     <Container>
      <Records2Board 
-        header="Fazenda Fortuna" record={[]}     />
+        header="Fazenda Prosperidade" record={[]} onClose={function (): void {
+          throw new Error("Function not implemented.")
+        } }     />
      <Records2Board 
-        header="Fazenda Fortuna" record={[]}     />
+        header="Fazenda Céu azul" record={[]} onClose={function (): void {
+          throw new Error("Function not implemented.")
+        } }     />
      <Records2Board 
-        header="Fazenda Fortuna" record={[]}     />
+        header="Fazenda Princesinha do lago" record={[]} onClose={function (): void {
+          throw new Error("Function not implemented.")
+        } }     />
      <Records2Board 
-        header="Fazenda Fortuna" record={[]}     />
+        header="Fazenda da Serra" record={[]} onClose={function (): void {
+          throw new Error("Function not implemented.")
+        } }     />
     </Container>
   )
 }
